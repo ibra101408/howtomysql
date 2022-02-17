@@ -9,9 +9,9 @@ const con = mysql.createConnection( {
 
 con.connect(function (err){
     if(err) throw err;
-    var sql = "DELETE FROM customers WHERE address = 'Mountain 21'";
+    var sql = "UPDATE customers SET address = 'Canyon 123' WHERE address = 'Highway 37'";
     con.query(sql, function (err, result) {
         if (err) throw err;
-        console.log("Number of records deleted: " + result.affectedRows);
+        console.log(result.affectedRows + " record(s) updated");
     });
 });
