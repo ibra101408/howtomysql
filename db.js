@@ -9,9 +9,9 @@ const con = mysql.createConnection( {
 
 con.connect(function (err){
     if(err) throw err;
-    var sql = "DROP TABLE customers";
+    var sql = "SELECT * FROM customers LIMIT 3";
     con.query(sql, function (err, result) {
         if (err) throw err;
-        console.log("Table deleted");
+        console.log(result);
     });
 });
