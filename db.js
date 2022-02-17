@@ -9,8 +9,10 @@ const con = mysql.createConnection( {
 
 con.connect(function (err){
     if(err) throw err;
-    con.query("SELECT * FROM customers", function (err, result, fields) {
+    console.log("Connected!");
+    var sql = "INSERT INTO customers (name, address) VALUES ('Company Inc', 'Highway 37')";
+    con.query(sql, function (err, result) {
         if (err) throw err;
-        console.log(result);
+        console.log("1 record inserted");
     });
 });
