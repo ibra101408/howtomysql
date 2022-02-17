@@ -9,10 +9,10 @@ const con = mysql.createConnection( {
 
 con.connect(function (err){
     if(err) throw err;
-
-    var sql = "DROP TABLE customers";
+    console.log("Connected");
+    var sql = "CREATE TABLE customers (name VARCHAR (255), address VARCHAR (255))";
     con.query(sql, function (err, result){
         if(err) throw err;
-        console.log("Table deleted: " );
+        console.log("database created");
     });
 });
